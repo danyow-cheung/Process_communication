@@ -49,3 +49,16 @@
 - 文件读写
     目前已经遇到的是，读写的时候发生堵塞
     在`controler_txt.py`和`modeler_txt.py`返回的时间如下
+    ```
+    > python .\modeler_txt.py
+    cur lien 你好当前时间戳Thu Mar 28 16:23:20 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:21 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:22 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:23 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:24 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:25 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:26 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:27 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:28 2024
+    cur lien 你好当前时间戳Thu Mar 28 16:23:29 2024
+    ```
