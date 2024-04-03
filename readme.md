@@ -44,6 +44,10 @@
     [modeler]: Item 18 [time]1711613624.9000635
     [modeler]: Item 19 [time]1711613624.9000635
     ```
+    > 不行了，接上flask的话。参考新上传的`controler.py`和`model_v2.py` 
+    要么就考虑celery 
+    使用socket还是不行，还是`.txt`文件实在
+
 - 命令行参数
     不考虑
 - 文件读写

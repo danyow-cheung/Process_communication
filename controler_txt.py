@@ -15,8 +15,7 @@ def handle():
 
 
 while True:
-    for i in range(15):
-        time.sleep(1)
+    for i in range(100):
         fifo_queue.put(f"你好当前时间戳{time.ctime()}")
         handle()
 
