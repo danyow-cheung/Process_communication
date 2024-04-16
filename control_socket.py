@@ -8,13 +8,21 @@ def send_data_to_modeler(data):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect(("localhost", 8888))
     client_socket.send(data.encode("utf-8"))
+
+    data2 = client_socket.recv(1024).decode('utf-8')
+    if data2:
+        print("recv data", data2)
+
     client_socket.close()
 
 @app.route("/", methods=["POST"])
 def receive_data():
     data = request.json.get("data")
-    data_queue.put(data)
+    #data_queue.put(data)
+
+    send_data_to_modeler(data)
     return jsonify({"message": "Data received"})
+    
 
 if __name__ == "__main__":
     app.run(host="192.168.0.37", port=5000)

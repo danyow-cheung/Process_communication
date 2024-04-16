@@ -4,20 +4,29 @@ import socket
 
 data_queue = Queue()
 
+isBusy = False;
 
 def handle_client(client_socket):
     request = client_socket.recv(1024)
     data = request.decode("utf-8")
     perform_inference(data)
+    if isBusy:
+        client_socket.send("busy".encode("utf-8"))
+    else:
+        client_socket.send("ok".encode("utf-8"))
+    
     client_socket.close()
 
 def perform_inference(data):
+    isBusy = True
     # 这里是你的推理逻辑，根据需要进行修改
     print(f"Received data: {data}")
     # 进行推理操作
     result = "Inference result"
     print(f"Inference result: {result}")
-
+    isBusy = False
+    # send msg
+    
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(("localhost", 8888))
